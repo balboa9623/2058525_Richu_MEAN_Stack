@@ -1,0 +1,30 @@
+#container {
+    border: blue 5px solid;
+    display: inline-block;
+    padding: 10px 60px 10px 60px;
+    margin: 100px 200px 30px 200px;
+}
+
+#header {
+    border: solid black 5px;
+    text-align: center;
+    padding: 10px 30px 10px 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#mainContent {
+    border: solid black 5px;
+    text-align: center;
+    padding: 10px 30px 10px 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#footer {
+    border: solid black 5px;
+    text-align: center;
+    padding: 10px 30px 10px 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
