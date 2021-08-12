@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <script src="display_products.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <!-- cart icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</head>
+
+<body onload="fetchProducts()">
+
+    <!-- display cart with procucts code -->
+    <div id="menu">
+        <ul class="nav justify-content-end fixed-top">
+            <li class="nav-item">
+                <!-- <i class="bi bi-cart3" style="font-size: 1.7rem; color: cornflowerblue; margin-right: 25px;"></i> -->
+                <button type="submit" class="btn bg-transparent" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" onclick="displayCart()">
+                    <i class="bi bi-cart3" style="font-size: 1.7rem; color: cornflowerblue; margin-right: 25px;"></i>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 id="offcanvasRightLabel">What's in your cart</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <!-- use the below div class to append data from typescript -->
+                    <div class="offcanvas-body" id="canvas-body">
+
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- display all products -->
+    <div class="container col" style="display: flex; justify-content:center;" id="allProducts"></div>
+
+</body>
+
+</html>
