@@ -1,0 +1,30 @@
+<hr>
+<div>
+    <input type="button" value="Register form" class="btn btn-outline-info" (click)="togleForm()">
+</div>
+<br>
+
+<div *ngIf="registForm">
+    <div>
+        <h3>Register</h3>
+        <form #regisRef="ngForm" (ngSubmit)="addUser(regisRef)" class="form-group">
+            <div class="form-group">
+                <label class="form-label">Username </label>
+                <input type="text" name="user" ngModel required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Password </label>
+                <input type="password" name="pass" ngModel required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label"> Re-enter Password </label>
+                <input type="password" name="repeatPass" ngModel required>
+            </div>
+
+            <button class="btn btn-outline-primary" type="submit">Register</button>
+        </form>
+    </div>
+</div>
+<hr>

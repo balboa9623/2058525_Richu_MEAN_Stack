@@ -1,0 +1,25 @@
+<div>
+    <input type="button" value="Login form" class="btn btn-outline-info" (click)="togleForm()">
+</div>
+<br>
+<div *ngIf="loginForm">
+    <h3>Log in</h3>
+    <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)" class="form-group">
+        <div>
+            <div class="form-group">
+                <label class="form-label">Username </label>
+                <input type="text" name="user" ngModel required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Password </label>
+                <input type="password" name="pass" ngModel required>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Sign in</button>
+        </div>
+    </form>
+    <!-- <div>
+        <input type="button" value="Sign up!" class="btn btn-link" (click)="hideForms()">
+    </div> -->
+</div>
