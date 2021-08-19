@@ -1,0 +1,27 @@
+#todoForm {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(19, 134, 19);
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+hr {
+    width: 500px;
+    height: 10px;
+    background-color: rgba(119, 113, 113, 0.842);
+    border-radius: 5px;
+}
+
+#taskList {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 95%;
+}
