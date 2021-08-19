@@ -1,0 +1,36 @@
+<div>
+    <input type="button" value="Home page" class="btn btn-outline-info" (click)="togleForm()">
+</div>
+<br>
+
+<div *ngIf="dashboardForm">
+    <h3>Home page</h3>
+    <form #homeRef="ngForm" (ngSubmit)="addContact(homeRef)" class="form-group">
+        <div>
+            <div class="form-group">
+                <label class="form-label">Name </label>
+                <input type="text" name="contactName" ngModel required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Phone number </label>
+                <input type="text" name="phoneNum" ngModel required>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Add</button>
+        </div>
+    </form>
+
+    <div>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+            </tr>
+            <tr *ngFor="let item of currUser.info">
+                <td>{{item.name}}</td>
+                <td>{{item.phoneNumber}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
