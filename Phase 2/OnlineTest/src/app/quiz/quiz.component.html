@@ -1,0 +1,48 @@
+<!-- <button type="submit" *ngIf="!startQuiz" (click)="startTheQuiz()">Start the quiz</button> -->
+
+<div *ngIf="!reviewMode">
+
+
+    <mat-card *ngFor="let q of pageSlice">
+        <mat-card-header>
+            <mat-card-title>{{q.question}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-radio-group class="radio-group" [(ngModel)]="selectedAnswer">
+                <mat-radio-button class="radio-button" *ngFor="let opt of q.options" [value]="opt">
+                    {{opt}}
+                </mat-radio-button>
+            </mat-radio-group>
+
+            <mat-card-footer>
+                <button mat-raised-button color="primary" class="saveBtn" (click)="checkAnswer(q, selectedAnswer)">Save answer</button>
+            </mat-card-footer>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-paginator [length]="allQuestions.length" [pageSize]="1" [pageSizeOptions]="[2, 5, 10]" (page)="onPageChange($event)">
+    </mat-paginator>
+
+</div>
+
+<div *ngIf="reviewMode">
+    <button *ngIf="!reviewConfirmation" type="submit" (click)="review()">Review answers</button>
+
+    <div *ngIf="reviewConfirmation">
+        <h2>You scored {{score}} out of 10</h2>
+        <mat-card *ngFor="let q of allQuestions">
+            <mat-card-header>
+                <mat-card-title>{{q.question}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="allOptions">
+                    <ul *ngFor="let opt of q.options">
+                        <li *ngIf="opt==q.answer" style="color: green;">{{opt}}</li>
+                        <li *ngIf="opt!=q.answer" style="color: red;">{{opt}}</li>
+                    </ul>
+
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

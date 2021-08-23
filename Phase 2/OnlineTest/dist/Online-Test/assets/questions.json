@@ -1,0 +1,51 @@
+[{
+        "question": "What's the biggest animal in the world?",
+        "options": ["Beluga", "Blue whale", "Bowhead whale", "Fin whale"],
+        "answer": "Blue whale"
+    },
+    {
+        "question": "What is the capital of Iceland?",
+        "options": ["Westman Iceland", "Westfjords", "Reykjavik", "North Iceland"],
+        "answer": "Reykjavik"
+    },
+    {
+        "question": "Who came second in the FIFA Women's World Cup in 2019?",
+        "options": ["Netherlands", "Italy", "Australia", "Norway"],
+        "answer": "Netherlands"
+    },
+    {
+        "question": "What is the largest country in the world?",
+        "options": ["India", "United States", "Russia", "Germany"],
+        "answer": "Russia"
+    },
+    {
+        "question": "In what state would you find the Grand Canyon?",
+        "options": ["California", "Utah", "Nevada", "Arizona"],
+        "answer": "Arizona"
+    },
+    {
+        "question": "Where is Mount Rushmore located?",
+        "options": ["South Dakota", "North Dakota", "Texas", "Nebraska"],
+        "answer": "South Dakota"
+    },
+    {
+        "question": "Which popular video game franchise has released games with the subtitles World At War and Black Ops?",
+        "options": ["Grand Theft Auto (GTA)", "Destiny", "Call of Duty", "Super Mario"],
+        "answer": "Call of Duty"
+    },
+    {
+        "question": "What is the currency of Denmark?",
+        "options": ["Yen", "Dollar", "Rupees", "Krone"],
+        "answer": "Krone"
+    },
+    {
+        "question": "How many permanent teeth does a dog have?",
+        "options": ["32", "15", "42", "20"],
+        "answer": "42"
+    },
+    {
+        "question": "What is the smallest planet in our solar system?",
+        "options": ["Pluto", "Mercury", "Jupiter", "Earth"],
+        "answer": "Mercury"
+    }
+]
