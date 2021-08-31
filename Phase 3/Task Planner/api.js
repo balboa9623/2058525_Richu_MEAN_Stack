@@ -144,11 +144,7 @@ let server = http.createServer((req, res) => {
                 <a href="/"> << back</a>
                 <br>
                 <br>
-                <table border="1" style="display: flex;
-                        justify-content: center;
-                        margin-left: 30px;
-                        margin-left: 30px;
-                        padding: 10px;">
+                <table border="1">
                     <thead>
                         <td>Employee ID</td>
                         <td>Task ID</td>
