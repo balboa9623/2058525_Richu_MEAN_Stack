@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        #server {
+            display: block;
+            justify-content: center;
+            border: 1px solid;
+            font: black;
+            overflow-y: scroll;
+            margin-left: 20%;
+            margin-top: 35px;
+        }
+
+        div {
+            margin-top: 20px;
+        }
+
+        .inputArea {
+            display: block;
+            justify-content: center;
+            margin-top: 10px;
+            margin-left: 35%;
+        }
+    </style>
+
+    <script>
+        let conv = "";
+        let ws = new WebSocket("ws://localhost:9090");
+        ws.onopen = () => {
+            // ws.send("Hello Server, I am Web Socket Client App!");
+            sendMsg = () => {
+                let name = document.getElementById("name").value;
+                if (name) {
+                    document.getElementById("name").disabled = true;
+                }
+                let msg = document.getElementById("msg").value;
+                ws.send(name + ": " + msg);
+                document.getElementById("msg").value = "";
+
+                /* receive message from server application */
+                ws.onmessage = (msg) => {
+                    console.log(msg.data);
+                    conv = msg.data;
+                    document.getElementById("server").value = conv + "\n";
+                }
+
+            }
+
+        }
+        /* receive message from server application */
+        ws.onmessage = (msg) => {
+            console.log(msg.data);
+            conv += msg.data;
+            document.getElementById("server").innerHTML = `<b>${conv}</b>`;
+        }
+
+    </script>
+</head>
+
+<body>
+    <textarea class="container" name="server" id="server" cols="5" rows="28" disabled></textarea>
+
+    <div class="container inputArea">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name">
+        <br>
+        <br>
+        <label for="msg">Message: </label>
+        <input type="text" name="msg" id="msg">
+        <br>
+        <br>
+        <input class="btn btn-primary" type="button" onclick="sendMsg()" value="Send">
+    </div>
+    </div>
+</body>
+
+</html>
